@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHomeUI.MainPage"
+             BackgroundColor="#F8F9FA">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, *, Auto" Padding="25" RowSpacing="20">
+
+            <VerticalStackLayout Grid.Row="0" Spacing="5">
+                <Label Text="Smart Home Dashboard" FontSize="26" FontAttributes="Bold" TextColor="{StaticResource PrimaryColor}"/>
+                <Label Text="Living Room Overview" FontSize="15" TextColor="{StaticResource GrayText}"/>
+            </VerticalStackLayout>
+
+            <Border Grid.Row="1" Style="{StaticResource DashboardCard}">
+                <HorizontalStackLayout Spacing="20" VerticalOptions="Center">
+                    <Image Source="dotnet_bot.png" HeightRequest="45" WidthRequest="45" />
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Label Text="28°C" FontSize="30" FontAttributes="Bold" TextColor="{StaticResource PrimaryColor}" />
+                        <Label Text="Sunny - Ho Chi Minh City" TextColor="DimGray" />
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Border>
+
+            <Grid Grid.Row="2" ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="15" RowSpacing="15">
+
+                <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource DashboardCard}">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Light" FontAttributes="Bold" />
+                        <Switch IsToggled="True" HorizontalOptions="Start" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource DashboardCard}">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Fan" FontAttributes="Bold" />
+                        <Switch IsToggled="False" HorizontalOptions="Start" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource DashboardCard}">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Air Con" FontAttributes="Bold" />
+                        <Switch IsToggled="True" HorizontalOptions="Start" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource DashboardCard}">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Security" FontAttributes="Bold" />
+                        <Switch IsToggled="True" HorizontalOptions="Start" />
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="3" Style="{StaticResource DashboardCard}" BackgroundColor="{StaticResource SecondaryColor}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Energy Usage: 82%" FontAttributes="Bold" TextColor="{StaticResource PrimaryColor}" />
+                    <ProgressBar Progress="0.82" ProgressColor="{StaticResource PrimaryColor}" HeightRequest="10" />
+                </VerticalStackLayout>
+            </Border>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
